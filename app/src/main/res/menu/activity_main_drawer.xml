@@ -3,33 +3,29 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_products"
+            android:icon="@drawable/product"
+            android:title="@string/our_products" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_stores"
+            android:icon="@drawable/shop"
+            android:title="@string/our_stores" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/advantages">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_fidelity_card"
+                android:icon="@drawable/fidelity"
+                android:title="@string/fidelity_card" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_sponsoring_program"
+                android:icon="@drawable/sponsorship"
+                android:title="@string/sponsoring_program" />
+            <item
+                android:id="@+id/nav_gift_cards"
+                android:icon="@drawable/qrcode"
+                android:title="@string/gift_cards" />
         </menu>
     </item>
 

@@ -5,4 +5,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="default_username">Julie Kinney</string>
+    <string name="default_email">admin@tobeortohave.fr</string>
+    <string name="our_products">Nos produits</string>
+    <string name="sponsoring_program">Programme de parrainage</string>
+    <string name="our_stores">Nos magasins</string>
+    <string name="fidelity_card">Carte de fidelité</string>
+    <string name="advantages">Avantages</string>
+    <string name="gift_cards">Cartes cadeaux</string>
 </resources>
