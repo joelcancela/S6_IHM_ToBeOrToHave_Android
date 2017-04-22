@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.unice.polytech.jcancela.tobeortohave">
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="04bbc28096e0423317b16a13e5dbe5d9a213f7a0"
+            />
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

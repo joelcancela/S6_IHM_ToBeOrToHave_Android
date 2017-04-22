@@ -13,4 +13,6 @@
     <string name="fidelity_card">Carte de fidelité</string>
     <string name="advantages">Avantages</string>
     <string name="gift_cards">Cartes cadeaux</string>
+    <string name="tobeortohavelogo">ToBeOrToHaveLogo</string>
+    <string name="home">Accueil</string>
 </resources>
