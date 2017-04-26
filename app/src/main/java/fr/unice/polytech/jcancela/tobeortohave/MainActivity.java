@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         findViewById(R.id.connection_button).setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0) {
