@@ -12,7 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -33,6 +35,7 @@ public class MenuActivity extends AppCompatActivity
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
 
+
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,11 +49,16 @@ public class MenuActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //User
+        Bundle bundle = getIntent().getExtras();
+        String userEmail = bundle.getString("email");
+        View headerView = navigationView.getHeaderView(0);
+        TextView userEmailTextView = (TextView) headerView.findViewById(R.id.emailTextView);
+        userEmailTextView.setText(userEmail);
+
+
         //TweetsMainScreen
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, new EmbeddedTwitterTimelineFragment());
-        transaction.addToBackStack(null);
-        transaction.commit();
+        setFragment(new EmbeddedTwitterTimelineFragment());
 
 
     }
@@ -110,10 +118,7 @@ public class MenuActivity extends AppCompatActivity
         }
 
         if (fragment != null) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragment_container, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
+            setFragment(fragment);
         }
 
 
@@ -127,7 +132,7 @@ public class MenuActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
-        fragmentTransaction.replace(android.R.id.content, fragment);
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
     }
 }
