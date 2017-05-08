@@ -15,17 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-
 import fr.unice.polytech.jcancela.tobeortohave.fragment.FidelityCardFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.GiftCardsFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.HomeFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.ProductsFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.SponsoringFragment;
-import fr.unice.polytech.jcancela.tobeortohave.fragment.StoresFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoresFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.twitter.EmbeddedTwitterTimelineFragment;
-import io.fabric.sdk.android.Fabric;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

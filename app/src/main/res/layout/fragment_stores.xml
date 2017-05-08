@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <SearchView
+        android:id="@+id/search_view_gmaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="Trouver mon magasin"
+        android:layout_weight="0.13" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="442dp" />
 
 </LinearLayout>
