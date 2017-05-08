@@ -36,4 +36,6 @@
     <string name="connexion_ou_s_enregistrer">Connexion ou s\'enregistrer</string>
     <string name="news">Actualités</string>
     <string name="title_activity_maps">Map</string>
+    <string name="register_link_fr"><u>Pas encore inscrit ? Cliquez ici</u></string>
+    <string name="logout_fr">Deconnexion</string>
 </resources>

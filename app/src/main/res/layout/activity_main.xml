@@ -43,5 +43,19 @@
 
             android:background="@color/tw__composer_blue"
             android:text="@string/connexion" />
+
+        <TextView
+            android:id="@+id/register_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/connection_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="58dp"
+            android:autoText="false"
+            android:clickable="true"
+            android:onClick="onRegisterLinkClick"
+            android:text="@string/register_link_fr"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold" />
     </RelativeLayout>
 </FrameLayout>
