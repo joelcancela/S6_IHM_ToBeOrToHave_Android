@@ -49,9 +49,12 @@ public class MenuActivity extends AppCompatActivity
         //User
         Bundle bundle = getIntent().getExtras();
         String userEmail = bundle.getString("email");
+        String username = bundle.getString("username");
         View headerView = navigationView.getHeaderView(0);
         TextView userEmailTextView = (TextView) headerView.findViewById(R.id.emailTextView);
+        TextView userNicknameTextView = (TextView) headerView.findViewById(R.id.usernameTextView);
         userEmailTextView.setText(userEmail);
+        userNicknameTextView.setText(username);
 
 
         //TweetsMainScreen

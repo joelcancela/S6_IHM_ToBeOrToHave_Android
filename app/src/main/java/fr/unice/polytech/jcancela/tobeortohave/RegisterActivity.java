@@ -5,4 +5,5 @@ package fr.unice.polytech.jcancela.tobeortohave;
  */
 
 public class RegisterActivity {
+    //TODO
 }
