@@ -34,4 +34,5 @@
     <string name="bg">bg</string>
     <string name="mot_de_passe">Mot de passe</string>
     <string name="connexion_ou_s_enregistrer">Connexion ou s\'enregistrer</string>
+    <string name="news">Actualités</string>
 </resources>

@@ -13,28 +13,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.TextView;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
-import fr.unice.polytech.jcancela.tobeortohave.twitter.EmbeddedTwitterTimelineFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.FidelityCardFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.GiftCardsFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.HomeFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.ProductsFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.SponsoringFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.StoresFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.twitter.EmbeddedTwitterTimelineFragment;
 import io.fabric.sdk.android.Fabric;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "OTeJHn5fLGFAhAZ0GlQnVZad2";
-    private static final String TWITTER_SECRET = "vvcUQuMZpHdB1NI7bxP3rOW0hblGt18CRWr3fJmUUwthBOEt0T";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(authConfig));
-
 
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -58,7 +58,7 @@ public class MenuActivity extends AppCompatActivity
 
 
         //TweetsMainScreen
-        setFragment(new EmbeddedTwitterTimelineFragment());
+        setFragment(new HomeFragment());
 
 
     }
@@ -103,17 +103,25 @@ public class MenuActivity extends AppCompatActivity
         Fragment fragment = null;
 
         if (id == R.id.nav_home) {
+            fragment = new HomeFragment();
+
+        } else if (id == R.id.nav_news) {
             fragment = new EmbeddedTwitterTimelineFragment();
 
         } else if (id == R.id.nav_products) {
+            fragment = new ProductsFragment();
 
         } else if (id == R.id.nav_stores) {
+            fragment = new StoresFragment();
 
         } else if (id == R.id.nav_fidelity_card) {
+            fragment = new FidelityCardFragment();
 
         } else if (id == R.id.nav_sponsoring_program) {
+            fragment = new SponsoringFragment();
 
         } else if (id == R.id.nav_gift_cards) {
+            fragment = new GiftCardsFragment();
 
         }
 
