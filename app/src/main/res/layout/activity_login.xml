@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/connexion_ou_s_enregistrer"
+                android:text="@string/connexion"
                 android:textStyle="bold" />
 
         </LinearLayout>
