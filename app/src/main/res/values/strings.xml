@@ -37,4 +37,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="register_link_fr"><u>Pas encore inscrit ? Cliquez ici</u></string>
     <string name="logout_fr">Deconnexion</string>
+    <string name="connexion_title">Connexion</string>
 </resources>

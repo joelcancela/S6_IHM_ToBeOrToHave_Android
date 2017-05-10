@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/home_banner"
         android:layout_width="wrap_content"
-        android:layout_height="244dp"
+        android:layout_height="300dp"
         android:layout_weight="1"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/home_banner" />
@@ -17,63 +17,62 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="@dimen/home_banner_height"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:orientation="vertical">
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.17"
+            android:layout_marginTop="310dp"
             android:columnCount="2"
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/catalog_cardview"
-                android:layout_width="160dp"
+                android:id="@+id/shopping_list_cardview"
+                android:layout_width="180dp"
                 android:layout_height="@dimen/cardview_home_height"
-                android:layout_column="1"
+                android:layout_column="0"
                 android:layout_row="0"
-                app:cardUseCompatPadding="true" />
+                app:cardUseCompatPadding="true">
+
+            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:id="@+id/stores_cardview"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="@dimen/cardview_home_height"
                 android:layout_column="1"
-                android:layout_row="1"
-                app:cardUseCompatPadding="true">
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/shopping_list_cardview"
-                android:layout_width="183dp"
-                android:layout_height="@dimen/cardview_home_height"
-                android:layout_column="0"
                 android:layout_row="0"
-                app:cardUseCompatPadding="true" />
+                app:cardUseCompatPadding="true">
+
+            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/voucher_cardview"
-                android:layout_width="184dp"
+                android:id="@+id/products_cardview"
+                android:layout_width="180dp"
                 android:layout_height="@dimen/cardview_home_height"
                 android:layout_column="0"
                 android:layout_row="1"
                 app:cardUseCompatPadding="true">
 
             </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/news_cardview"
+                android:layout_width="180dp"
+                android:layout_height="@dimen/cardview_home_height"
+                android:layout_column="1"
+                android:layout_row="1" />
+
 
         </GridLayout>
 
         <android.support.v7.widget.CardView
             android:id="@+id/fidelity_status"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="75dp"
+            android:layout_column="0"
+            android:layout_row="1"
             app:cardUseCompatPadding="true" />
-
     </LinearLayout>
 
 </FrameLayout>
