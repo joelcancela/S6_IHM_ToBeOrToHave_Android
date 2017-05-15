@@ -70,7 +70,13 @@ public class MenuActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            moveTaskToBack(true);
+            FragmentManager fm = getSupportFragmentManager();
+            if (fm.getBackStackEntryCount() > 0) {
+                fm.popBackStack();
+            } else {
+                moveTaskToBack(true);
+            }
+
         }
     }
 

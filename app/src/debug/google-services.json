@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "896444965249",
+    "firebase_url": "https://crested-sentry-167013.firebaseio.com",
+    "project_id": "crested-sentry-167013",
+    "storage_bucket": "crested-sentry-167013.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896444965249:android:efb3ce1e66b15aa8",
+        "android_client_info": {
+          "package_name": "fr.unice.polytech.jcancela.tobeortohave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896444965249-plr56hp2c6orl4drvuq8mdr3voh59303.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZNiT9oQFNMPoC5zEiBh4vr7SSbGPeaLY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
