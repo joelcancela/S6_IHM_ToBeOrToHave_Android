@@ -16,12 +16,13 @@
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            app:srcCompat="@drawable/euro" />
+            android:layout_marginTop="-10dp"
+            app:srcCompat="@drawable/twit" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="294dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginLeft="50dp"
         android:orientation="horizontal">
@@ -31,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
+            android:paddingEnd="10dp"
             android:text="Actualités"
             android:textAlignment="textStart"
             android:textColor="@color/tw__blue_pressed"

@@ -7,7 +7,8 @@
 
     <LinearLayout
         android:layout_width="50dp"
-        android:layout_height="75dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-10dp"
         android:background="@color/tw__blue_pressed"
         android:orientation="horizontal">
 
@@ -16,15 +17,16 @@
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            app:srcCompat="@drawable/euro" />
+            app:srcCompat="@drawable/search" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="294dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginLeft="50dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/title"
@@ -32,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
+            android:paddingEnd="10dp"
             android:text="Trouver un produit"
             android:textAlignment="textStart"
             android:textColor="@color/tw__blue_pressed"

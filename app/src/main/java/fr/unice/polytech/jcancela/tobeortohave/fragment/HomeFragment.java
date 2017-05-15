@@ -6,10 +6,10 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ImageView;
 
-import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
-import com.twitter.sdk.android.tweetui.UserTimeline;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
 
@@ -19,10 +19,22 @@ import fr.unice.polytech.jcancela.tobeortohave.R;
 
 public class HomeFragment extends android.support.v4.app.Fragment {
 
+    CarouselView carouselView;
+
+    int[] sampleImages = {R.drawable.banner1,R.drawable.banner2, R.drawable.banner3};
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        carouselView = (CarouselView) view.findViewById(R.id.home_banner);
+        carouselView.setPageCount(sampleImages.length);
+
+        carouselView.setImageListener(imageListener);
+
+
         CardView shoppingListCardView = (CardView) view.findViewById(R.id.shopping_list_cardview);
         inflater.inflate(R.layout.cardview_home_shopping_list, shoppingListCardView);
         CardView storeCardView = (CardView) view.findViewById(R.id.stores_cardview);
@@ -40,4 +52,11 @@ public class HomeFragment extends android.support.v4.app.Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
+    };
 }

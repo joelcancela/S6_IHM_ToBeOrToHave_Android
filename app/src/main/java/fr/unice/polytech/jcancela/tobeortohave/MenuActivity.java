@@ -51,6 +51,7 @@ public class MenuActivity extends AppCompatActivity
         String userEmail = bundle.getString("email");
         String username = bundle.getString("username");
         View headerView = navigationView.getHeaderView(0);
+        //TODO add picture
         TextView userEmailTextView = (TextView) headerView.findViewById(R.id.emailTextView);
         TextView userNicknameTextView = (TextView) headerView.findViewById(R.id.usernameTextView);
         userEmailTextView.setText(userEmail);

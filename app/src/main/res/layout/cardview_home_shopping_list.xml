@@ -15,12 +15,13 @@
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="6dp"
+            android:layout_marginTop="-10dp"
             app:srcCompat="@drawable/checklist" />
 
     </LinearLayout>
 
     <GridLayout
-        android:layout_width="122dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginLeft="50dp"
         android:orientation="horizontal">

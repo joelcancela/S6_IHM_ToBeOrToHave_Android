@@ -199,6 +199,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
+                //TODO check connection
                 mPasswordView.requestFocus();
             }
         }

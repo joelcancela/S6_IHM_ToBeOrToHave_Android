@@ -1,11 +1,9 @@
 package fr.unice.polytech.jcancela.tobeortohave;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onRegisterLinkClick(View view) {
-        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-        startActivity(intent);
+        //TODO RegisterActivity
+//        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+//        startActivity(intent);
     }
 }
