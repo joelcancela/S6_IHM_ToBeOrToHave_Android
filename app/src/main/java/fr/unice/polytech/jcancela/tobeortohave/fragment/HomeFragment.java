@@ -59,6 +59,11 @@ public class HomeFragment extends android.support.v4.app.Fragment {
 
         CardView storeCardView = (CardView) view.findViewById(R.id.stores_cardview);
         inflater.inflate(R.layout.cardview_home_store, storeCardView);
+        String favstore = settings.getString("fav_store","ToBeOrToHave Nice");
+
+        TextView fav_store = (TextView) storeCardView.findViewById(R.id.store);
+        fav_store.setText(favstore);
+
         storeCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

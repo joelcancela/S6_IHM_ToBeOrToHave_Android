@@ -4,22 +4,35 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <SearchView
-        android:id="@+id/search_view_gmaps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="10dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="Trouver mon magasin"
-        android:layout_weight="0.13" />
-
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="442dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Magasin selectionné : " />
+
+        <TextView
+            android:id="@+id/store_selected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="aucun" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/select_store"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="C'est mon magasin" />
 
 </LinearLayout>
