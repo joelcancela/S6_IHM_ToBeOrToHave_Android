@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,15 +8,15 @@
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/home_banner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
-        app:srcCompat="@drawable/banner1"
         app:fillColor="#FFFFFFFF"
         app:pageColor="#00000000"
         app:radius="4dp"
         app:slideInterval="3000"
+        app:srcCompat="@drawable/banner1"
         app:strokeColor="#FF777777"
-        app:strokeWidth="1dp"/>
+        app:strokeWidth="1dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,6 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="310dp"
             android:horizontalSpacing="0dp"
             android:numColumns="2"
             android:orientation="vertical"
@@ -76,7 +75,7 @@
                 android:layout_gravity="fill_horizontal"
                 android:layout_row="1"
                 android:layout_rowSpan="1"
-                app:cardUseCompatPadding="true"/>
+                app:cardUseCompatPadding="true" />
 
 
         </GridLayout>
@@ -88,4 +87,4 @@
             app:cardUseCompatPadding="true" />
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

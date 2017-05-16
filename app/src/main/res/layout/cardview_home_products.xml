@@ -9,7 +9,7 @@
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_marginTop="-10dp"
-        android:background="@color/tw__blue_pressed"
+        android:background="@android:color/holo_orange_dark"
         android:orientation="horizontal">
 
         <ImageView
@@ -37,7 +37,7 @@
             android:paddingEnd="10dp"
             android:text="Trouver un produit"
             android:textAlignment="textStart"
-            android:textColor="@color/tw__blue_pressed"
+            android:textColor="@android:color/holo_orange_dark"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"

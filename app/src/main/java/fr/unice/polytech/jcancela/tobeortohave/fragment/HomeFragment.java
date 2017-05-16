@@ -16,6 +16,7 @@ import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoreChooserFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoresFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.twitter.EmbeddedTwitterTimelineFragment;
 
@@ -67,7 +68,7 @@ public class HomeFragment extends android.support.v4.app.Fragment {
         storeCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setFragment(new StoresFragment());
+                setFragment(new StoreChooserFragment());
             }
         });
 
@@ -114,6 +115,7 @@ public class HomeFragment extends android.support.v4.app.Fragment {
     ImageListener imageListener = new ImageListener() {
         @Override
         public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageResource(sampleImages[position]);
         }
     };

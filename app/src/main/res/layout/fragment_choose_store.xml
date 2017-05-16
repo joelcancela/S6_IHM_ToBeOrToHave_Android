@@ -7,7 +7,7 @@
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="412dp" />
+        android:layout_height="442dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,14 +27,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="aucun" />
-
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/description_store"
+    <Button
+        android:id="@+id/select_store"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Horaires: 8h - 20h du Lundi au Vendredi \nAdresse : 420 Rue de la Jamaique \nOUVERT" />
+        android:text="C'est mon magasin" />
 
 </LinearLayout>

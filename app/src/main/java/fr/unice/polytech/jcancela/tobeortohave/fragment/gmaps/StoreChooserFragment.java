@@ -35,7 +35,7 @@ import fr.unice.polytech.jcancela.tobeortohave.R;
  * Created by Joel CANCELA VAZ on 08/05/2017.
  */
 
-public class StoresFragment extends android.support.v4.app.Fragment {
+public class StoreChooserFragment extends android.support.v4.app.Fragment {
 
     private static final int TAG_CODE_PERMISSION_LOCATION = 1337;
 
@@ -48,8 +48,35 @@ public class StoresFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //TODO Change actionbar title
-        View view = inflater.inflate(R.layout.fragment_stores, container, false);
+        View view = inflater.inflate(R.layout.fragment_choose_store, container, false);
         storeSelected = (TextView) view.findViewById(R.id.store_selected);
+        selectStore = (Button) view.findViewById(R.id.select_store);
+        selectStore.setEnabled(false);
+        selectStore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String store= storeSelected.getText().toString();
+                new AlertDialog.Builder(getContext())
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Nouveau magasin favori")
+                        .setMessage("Confirmer "+store+" comme magasin favori ?")
+                        .setPositiveButton("Oui", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                    if (getActivity() != null) {
+                                        SharedPreferences settings = getActivity().getApplicationContext().getSharedPreferences("ToBeOrToHave", 0);
+                                        SharedPreferences.Editor editor = settings.edit();
+                                        editor.putString("fav_store", store);
+                                        editor.apply();
+                                    }
+                            }
+
+                        })
+                        .setNegativeButton("Non", null)
+                        .show();
+            }
+        });
         mapView = (MapView) view.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
@@ -60,6 +87,7 @@ public class StoresFragment extends android.support.v4.app.Fragment {
                 myMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
+                        selectStore.setEnabled(true);
                         storeSelected.setText(marker.getTitle());
                         return false;
                     }
