@@ -26,10 +26,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import java.util.List;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
+import fr.unice.polytech.jcancela.tobeortohave.model.Store;
 
 /**
  * Created by Joel CANCELA VAZ on 08/05/2017.
@@ -128,15 +128,11 @@ public class StoreChooserFragment extends android.support.v4.app.Fragment {
 
     private void addStores(GoogleMap myMap) {
         try {
-            JSONArray stores = new StoresTask().execute().get();
-            for (int i = 0; i < stores.length(); i++) {
-                JSONObject store = stores.getJSONObject(i);
-                String name = store.getString("name");
-                JSONObject position = store.getJSONObject("position");
-                double lat = position.getDouble("latitude");
-                double longi = position.getDouble("longitude");
-                LatLng coordinates = new LatLng(lat, longi);
-                myMap.addMarker(new MarkerOptions().position(coordinates).title(name));
+            List<Store> stores = new StoresTask().execute().get();
+            for (int i = 0; i < stores.size(); i++) {
+                Store store = stores.get(i);
+                LatLng coordinates = new LatLng(store.getLatitude(), store.getLongitude());
+                myMap.addMarker(new MarkerOptions().position(coordinates).title(store.getName()));
             }
         } catch (Exception e) {
 

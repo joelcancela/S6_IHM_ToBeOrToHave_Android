@@ -2,8 +2,6 @@ package fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -11,7 +9,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,10 +23,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import java.util.List;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
+import fr.unice.polytech.jcancela.tobeortohave.model.Store;
 
 /**
  * Created by Joel CANCELA VAZ on 08/05/2017.
@@ -100,15 +97,11 @@ public class StoresFragment extends android.support.v4.app.Fragment {
 
     private void addStores(GoogleMap myMap) {
         try {
-            JSONArray stores = new StoresTask().execute().get();
-            for (int i = 0; i < stores.length(); i++) {
-                JSONObject store = stores.getJSONObject(i);
-                String name = store.getString("name");
-                JSONObject position = store.getJSONObject("position");
-                double lat = position.getDouble("latitude");
-                double longi = position.getDouble("longitude");
-                LatLng coordinates = new LatLng(lat, longi);
-                myMap.addMarker(new MarkerOptions().position(coordinates).title(name));
+            List<Store> stores = new StoresTask().execute().get();
+            for (int i = 0; i < stores.size(); i++) {
+                Store store = stores.get(i);
+                LatLng coordinates = new LatLng(store.getLatitude(), store.getLongitude());
+                myMap.addMarker(new MarkerOptions().position(coordinates).title(store.getName()));
             }
         } catch (Exception e) {
 
