@@ -1,8 +1,11 @@
 package fr.unice.polytech.jcancela.tobeortohave.database;
 
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
+import fr.unice.polytech.jcancela.tobeortohave.SingleProductFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.ProductsFragment;
 import fr.unice.polytech.jcancela.tobeortohave.model.Product;
 
 /**
@@ -21,11 +26,13 @@ public class ProductsViewAdapter extends RecyclerView.Adapter<ProductsViewAdapte
 
     private List<Product> productList;
     private List<Product> productListCopy;
+    private Fragment fatherFragment;
 
-    public ProductsViewAdapter(List<Product> productList) {
+    public ProductsViewAdapter(List<Product> productList, Fragment fatherFragment) {
         this.productList = productList;
         this.productListCopy = new ArrayList<>();
         productListCopy.addAll(productList);
+        this.fatherFragment =fatherFragment;
     }
 
     public class NewsViewHolder extends RecyclerView.ViewHolder {
@@ -34,7 +41,31 @@ public class ProductsViewAdapter extends RecyclerView.Adapter<ProductsViewAdapte
         public NewsViewHolder(CardView cardview) {
             super(cardview);
             this.cardview=cardview;
+
+            cardview.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    // get position
+                    int pos = getAdapterPosition();
+
+                    // check if item still exists
+                    if(pos != RecyclerView.NO_POSITION){
+                        fragmentJump(productList.get(pos));
+                    }
+                }
+            });
+
         }
+    }
+
+    private void fragmentJump(Product productSelected) {
+        Fragment mFragment = new SingleProductFragment();
+        Bundle mBundle = new Bundle();
+        mBundle.putParcelable("article", productSelected);
+        mFragment.setArguments(mBundle);
+        ProductsFragment productsFragment = (ProductsFragment) fatherFragment;
+        productsFragment.switchContent(mFragment);
+
     }
 
     @Override

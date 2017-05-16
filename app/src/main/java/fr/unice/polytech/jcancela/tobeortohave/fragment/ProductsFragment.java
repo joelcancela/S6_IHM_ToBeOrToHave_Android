@@ -2,12 +2,14 @@ package fr.unice.polytech.jcancela.tobeortohave.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +31,9 @@ public class ProductsFragment extends android.support.v4.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_products, container, false);
+        final View view = inflater.inflate(R.layout.fragment_products, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.products_view);
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.products_view);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this.getContext(),2);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -46,7 +48,7 @@ public class ProductsFragment extends android.support.v4.app.Fragment {
         }
 
 
-        final ProductsViewAdapter recyclerViewAdapter = new ProductsViewAdapter(productList);
+        final ProductsViewAdapter recyclerViewAdapter = new ProductsViewAdapter(productList,this);
         recyclerView.setAdapter(recyclerViewAdapter);
 
 
@@ -78,5 +80,12 @@ public class ProductsFragment extends android.support.v4.app.Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    public void switchContent(Fragment fragment) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, fragment);
+        ft.addToBackStack("productsView");
+        ft.commit();
     }
 }
