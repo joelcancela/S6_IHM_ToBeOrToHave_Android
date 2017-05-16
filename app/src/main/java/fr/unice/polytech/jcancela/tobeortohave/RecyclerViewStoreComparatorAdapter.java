@@ -1,9 +1,12 @@
 package fr.unice.polytech.jcancela.tobeortohave;
 
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -12,6 +15,7 @@ import java.text.NumberFormat;
 import java.util.Collections;
 import java.util.List;
 
+import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoresFragment;
 import fr.unice.polytech.jcancela.tobeortohave.model.Store;
 
 /**
@@ -22,11 +26,13 @@ public class RecyclerViewStoreComparatorAdapter extends RecyclerView.Adapter<Rec
 
     float price;
     List<Store> storesList;
+    Fragment fatherFragment;
 
-    public RecyclerViewStoreComparatorAdapter(float price, List<Store> storesList) {
+    public RecyclerViewStoreComparatorAdapter(float price, List<Store> storesList, Fragment fatherFragment) {
         this.price = price;
         this.storesList= storesList;
         Collections.shuffle(storesList);
+        this.fatherFragment=fatherFragment;
     }
 
     @Override
@@ -60,9 +66,31 @@ public class RecyclerViewStoreComparatorAdapter extends RecyclerView.Adapter<Rec
 
     public class StoreHolder extends RecyclerView.ViewHolder {
         public CardView cardview;
-        public StoreHolder(CardView cardView, List<Store> storesList) {
+        public StoreHolder(CardView cardView, final List<Store> storesList) {
             super(cardView);
             this.cardview = cardView;
+            cardview.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    // get position
+                    int pos = getAdapterPosition();
+
+                    // check if item still exists
+                    if(pos != RecyclerView.NO_POSITION){
+                        fragmentJump(storesList.get(pos));
+                    }
+                }
+            });
+        }
+        private void fragmentJump(Store store) {
+            Fragment mFragment = new StoresFragment();
+            Bundle mBundle = new Bundle();
+            mBundle.putParcelable("goto_store", store);
+            mFragment.setArguments(mBundle);
+            PriceComparatorFragment priceComparatorFragment = (PriceComparatorFragment) fatherFragment;
+            priceComparatorFragment.switchContent(mFragment);
+
         }
     }
+
 }

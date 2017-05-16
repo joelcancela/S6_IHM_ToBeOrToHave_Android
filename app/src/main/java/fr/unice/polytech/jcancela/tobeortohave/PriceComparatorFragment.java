@@ -3,6 +3,7 @@ package fr.unice.polytech.jcancela.tobeortohave;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,8 +40,15 @@ public class PriceComparatorFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
-        recyclerView.setAdapter(new RecyclerViewStoreComparatorAdapter(price,storesList));
+        recyclerView.setAdapter(new RecyclerViewStoreComparatorAdapter(price,storesList,this));
 
         return view;
+    }
+
+    public void switchContent(Fragment fragment) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, fragment);
+        ft.addToBackStack("pricecomparator");
+        ft.commit();
     }
 }

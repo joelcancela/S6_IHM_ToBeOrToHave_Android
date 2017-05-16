@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="50dp"
         android:layout_height="75dp"
-        android:background="@color/tw__blue_pressed"
+        android:background="@android:color/holo_green_dark"
         android:orientation="horizontal">
 
         <ImageView

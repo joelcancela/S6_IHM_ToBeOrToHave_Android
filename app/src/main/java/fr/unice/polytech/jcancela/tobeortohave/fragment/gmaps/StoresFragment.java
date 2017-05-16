@@ -38,14 +38,15 @@ public class StoresFragment extends android.support.v4.app.Fragment {
     MapView mapView;
     private GoogleMap myMap;
     private TextView storeSelected;
+    private Store store;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        Bundle bundle = getArguments().getBundle("gotostore");
-//        if(bundle!=null){
-//            bundle.getString("")
-//        }
+        if(getArguments()!=null){
+            store = getArguments().getParcelable("goto_store");
+        }
+
         //TODO Change actionbar title
         View view = inflater.inflate(R.layout.fragment_stores, container, false);
         storeSelected = (TextView) view.findViewById(R.id.store_selected);
@@ -80,8 +81,13 @@ public class StoresFragment extends android.support.v4.app.Fragment {
                 } else {
                     coordinates = new LatLng(location.getLatitude(), location.getLongitude());
                 }
+
+
 //                googleMap.addMarker(new MarkerOptions().position(coordinates).title("Vous"));
                 addStores(myMap);
+                if(store!=null){
+                    coordinates = new LatLng(store.getLatitude(),store.getLongitude());
+                }
                 myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 8));
                 mapView.onResume();
 
@@ -103,7 +109,15 @@ public class StoresFragment extends android.support.v4.app.Fragment {
             for (int i = 0; i < stores.size(); i++) {
                 Store store = stores.get(i);
                 LatLng coordinates = new LatLng(store.getLatitude(), store.getLongitude());
-                myMap.addMarker(new MarkerOptions().position(coordinates).title(store.getName()));
+                MarkerOptions markerOptions =new MarkerOptions().position(coordinates).title(store.getName());
+                Marker locationMarker = myMap.addMarker(markerOptions);
+                if(this.store!=null){
+                    if(this.store.getName().equals(store.getName())){
+                        locationMarker.showInfoWindow();
+                        storeSelected.setText(locationMarker.getTitle());
+                    }
+                }
+
             }
         } catch (Exception e) {
 
