@@ -3,7 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/products_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>

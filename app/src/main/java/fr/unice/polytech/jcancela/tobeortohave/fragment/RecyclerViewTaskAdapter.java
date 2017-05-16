@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
-import fr.unice.polytech.jcancela.tobeortohave.database.Task;
+import fr.unice.polytech.jcancela.tobeortohave.model.Task;
 
 /**
  * Created by Joel CANCELA VAZ on 15/05/2017.
