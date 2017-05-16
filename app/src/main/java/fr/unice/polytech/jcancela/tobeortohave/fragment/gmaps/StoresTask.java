@@ -24,15 +24,14 @@ public class StoresTask extends AsyncTask<Void, Void, List<Store>> {
         List<Store> stores = new ArrayList<>();
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonStores = jsonParser.getJSONFromUrl("http://www.joelcancela.fr/share/ToBeOrToHave/stores.json");
-        JSONArray storesjson = new JSONArray();
         try {
-            storesjson = jsonStores.getJSONArray("stores");
+            JSONArray storesjson = jsonStores.getJSONArray("stores");
             for (int i = 0; i < storesjson.length(); i++) {
                 JSONObject currentStore = storesjson.getJSONObject(i);
                 String name = currentStore.getString("name");
                 JSONObject postion = currentStore.getJSONObject("position");
                 double latitude = postion.getDouble("latitude");
-                double longitude = postion.getDouble("latitude");
+                double longitude = postion.getDouble("longitude");
                 stores.add(new Store(name,latitude,longitude));
 
             }

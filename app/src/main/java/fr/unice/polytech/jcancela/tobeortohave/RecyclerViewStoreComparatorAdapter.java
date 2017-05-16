@@ -45,7 +45,7 @@ public class RecyclerViewStoreComparatorAdapter extends RecyclerView.Adapter<Rec
 
         Store store = this.storesList.get(position);
         title.setText(store.getName());
-        double randomPrice = price+(position*0.5);//Random number
+        double randomPrice = price+(position*Math.random()*2);//Random number
         NumberFormat formatter = new DecimalFormat("#0.00");
         priceLabel.setText(formatter.format(randomPrice)+"€");
         if(position==0){

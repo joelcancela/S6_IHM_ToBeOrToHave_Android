@@ -12,7 +12,6 @@ import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -39,11 +38,14 @@ public class StoresFragment extends android.support.v4.app.Fragment {
     MapView mapView;
     private GoogleMap myMap;
     private TextView storeSelected;
-    private Button selectStore;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//        Bundle bundle = getArguments().getBundle("gotostore");
+//        if(bundle!=null){
+//            bundle.getString("")
+//        }
         //TODO Change actionbar title
         View view = inflater.inflate(R.layout.fragment_stores, container, false);
         storeSelected = (TextView) view.findViewById(R.id.store_selected);
