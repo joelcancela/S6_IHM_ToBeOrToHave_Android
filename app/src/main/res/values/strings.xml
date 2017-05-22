@@ -39,4 +39,5 @@
     <string name="logout_fr">Deconnexion</string>
     <string name="connexion_title">Connexion</string>
     <string name="add_task_button">Ajouter article</string>
+    <string name="how_to_share">Partagez ce QRCode ou partagez sur votre code promotionnel sur les réseaux sociaux</string>
 </resources>

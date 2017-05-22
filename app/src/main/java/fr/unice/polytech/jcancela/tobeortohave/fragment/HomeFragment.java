@@ -15,6 +15,10 @@ import android.widget.TextView;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import fr.unice.polytech.jcancela.tobeortohave.R;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoreChooserFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoresFragment;
@@ -99,6 +103,12 @@ public class HomeFragment extends android.support.v4.app.Fragment {
         TextView user_points = (TextView) fidelityCardView.findViewById(R.id.points);
         int points = settings.getInt("user_points",0);
         user_points.setText(String.valueOf(points)+" pts");
+
+
+        TextView dateTextView = (TextView) fidelityCardView.findViewById(R.id.date);
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        dateTextView.setText("au "+ dateFormat.format(date));
         fidelityCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
