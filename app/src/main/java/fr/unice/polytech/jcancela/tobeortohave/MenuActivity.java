@@ -73,8 +73,11 @@ public class MenuActivity extends AppCompatActivity
             FragmentManager fm = getSupportFragmentManager();
             if (fm.getBackStackEntryCount() > 0) {
                 fm.popBackStack();
-            } else {
-                moveTaskToBack(true);
+            }else{
+                Fragment currentFragment = fm.findFragmentById(R.id.fragment_container);
+                if(!(currentFragment instanceof HomeFragment)){
+                    setFragment(new HomeFragment());
+                }
             }
 
         }
@@ -151,7 +154,7 @@ public class MenuActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.replace(R.id.fragment_container, fragment, "");
         fragmentTransaction.commit();
     }
 }

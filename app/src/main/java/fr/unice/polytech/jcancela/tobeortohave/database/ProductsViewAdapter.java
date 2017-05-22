@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
-import fr.unice.polytech.jcancela.tobeortohave.SingleProductFragment;
+import fr.unice.polytech.jcancela.tobeortohave.fragment.SingleProductFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.ProductsFragment;
 import fr.unice.polytech.jcancela.tobeortohave.model.Product;
 

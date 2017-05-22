@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -68,11 +69,8 @@ public class StoresFragment extends android.support.v4.app.Fragment {
                     myMap.setMyLocationEnabled(true);
                     myMap.getUiSettings().setMyLocationButtonEnabled(true);
                 } else {
-                    requestPermissions( new String[]{
-                                    Manifest.permission.ACCESS_FINE_LOCATION,
-                                    Manifest.permission.ACCESS_COARSE_LOCATION},
-                            TAG_CODE_PERMISSION_LOCATION);
-                }//TODO getting permissions make app go to login
+                    Toast.makeText(getContext(),"Permissions error",Toast.LENGTH_SHORT).show();
+                }
                 LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
                 Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                 LatLng coordinates;
