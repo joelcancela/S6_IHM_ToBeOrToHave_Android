@@ -13,6 +13,7 @@ public class LoggingVerifier {
     private String emailToCheck;
     private String passwordToCheck;
     private String nickname;
+    private int points;
 
     public LoggingVerifier(String mEmail, String mPassword) {
         emailToCheck=mEmail;
@@ -34,6 +35,7 @@ public class LoggingVerifier {
                     if(user_i.getString("email").equals(emailToCheck)){
                         if(user_i.getString("password").equals(passwordToCheck)){
                             nickname = user_i.getString("username");
+                            points = user_i.getInt("points");
                             return true;
                         }
                     }
@@ -47,5 +49,9 @@ public class LoggingVerifier {
 
     public String getAccountNickname() {
         return nickname;
+    }
+
+    public int getPoints(){
+        return points;
     }
 }

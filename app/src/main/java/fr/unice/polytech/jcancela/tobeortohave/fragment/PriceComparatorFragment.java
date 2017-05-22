@@ -1,5 +1,6 @@
 package fr.unice.polytech.jcancela.tobeortohave.fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -29,6 +30,8 @@ public class PriceComparatorFragment extends Fragment {
         super.onCreateView(inflater,container,savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_price_comparator,container,false);
         float price = getArguments().getFloat("price");
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("ToBeOrToHave",0);
+        String favorite_store = sharedPreferences.getString("fav_store","");
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.stores_recyclerview);
         List<Store> storesList = new ArrayList<>();
         try {
@@ -41,7 +44,7 @@ public class PriceComparatorFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
-        recyclerView.setAdapter(new RecyclerViewStoreComparatorAdapter(price,storesList,this));
+        recyclerView.setAdapter(new RecyclerViewStoreComparatorAdapter(price,storesList,favorite_store,this));
 
         return view;
     }

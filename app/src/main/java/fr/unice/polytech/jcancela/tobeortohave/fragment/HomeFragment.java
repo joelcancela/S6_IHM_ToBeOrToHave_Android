@@ -96,6 +96,9 @@ public class HomeFragment extends android.support.v4.app.Fragment {
 
         CardView fidelityCardView = (CardView) view.findViewById(R.id.fidelity_status);
         inflater.inflate(R.layout.cardview_home_fidelity, fidelityCardView);
+        TextView user_points = (TextView) fidelityCardView.findViewById(R.id.points);
+        int points = settings.getInt("user_points",0);
+        user_points.setText(String.valueOf(points)+" pts");
         fidelityCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

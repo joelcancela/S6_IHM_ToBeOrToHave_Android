@@ -196,6 +196,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 intent.putExtra("email",mEmail);
                 intent.putExtra("username",loggingVerifier.getAccountNickname());
+                intent.putExtra("points",loggingVerifier.getPoints());
                 startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

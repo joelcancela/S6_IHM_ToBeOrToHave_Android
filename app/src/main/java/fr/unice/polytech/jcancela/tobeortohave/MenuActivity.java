@@ -1,6 +1,7 @@
 package fr.unice.polytech.jcancela.tobeortohave;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -50,6 +51,10 @@ public class MenuActivity extends AppCompatActivity
         Bundle bundle = getIntent().getExtras();
         String userEmail = bundle.getString("email");
         String username = bundle.getString("username");
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("ToBeOrToHave", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("user_points", bundle.getInt("points"));
+        editor.apply();
         View headerView = navigationView.getHeaderView(0);
         //TODO add picture
         TextView userEmailTextView = (TextView) headerView.findViewById(R.id.emailTextView);

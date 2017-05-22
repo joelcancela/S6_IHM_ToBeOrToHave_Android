@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,15 +26,31 @@ import fr.unice.polytech.jcancela.tobeortohave.model.Store;
 
 public class RecyclerViewStoreComparatorAdapter extends RecyclerView.Adapter<RecyclerViewStoreComparatorAdapter.StoreHolder> {
 
+    String favorite_store;
     float price;
     List<Store> storesList;
     Fragment fatherFragment;
 
-    public RecyclerViewStoreComparatorAdapter(float price, List<Store> storesList, Fragment fatherFragment) {
+    public RecyclerViewStoreComparatorAdapter(float price, List<Store> storesList, String favorite_store, Fragment fatherFragment) {
         this.price = price;
-        this.storesList= storesList;
+        this.favorite_store = favorite_store;
+        reorganizateStoresList(storesList);
+        this.fatherFragment = fatherFragment;
+    }
+
+    private void reorganizateStoresList(List<Store> storesList) {
         Collections.shuffle(storesList);
-        this.fatherFragment=fatherFragment;
+        List<Store> storeListClone = new ArrayList<>();
+        for (Store store : storesList) {
+            if (store.getName().equals(favorite_store)) {
+                storeListClone.add(store);
+                storesList.remove(store);
+                break;
+            }
+        }
+        storeListClone.addAll(storesList);
+
+        this.storesList = storeListClone;
     }
 
     @Override
@@ -52,10 +69,11 @@ public class RecyclerViewStoreComparatorAdapter extends RecyclerView.Adapter<Rec
 
         Store store = this.storesList.get(position);
         title.setText(store.getName());
-        double randomPrice = price+(position*Math.random()*2);//Random number
+        double randomPrice = price + (position * Math.random() * 2);//Random number
         NumberFormat formatter = new DecimalFormat("#0.00");
-        priceLabel.setText(formatter.format(randomPrice)+"€");
-        if(position==0){
+        priceLabel.setText(formatter.format(randomPrice) + "€");
+        if (position == 0) {
+            title.setText(store.getName()+"★");
             priceLabel.setTextColor(Color.parseColor("#00ff00"));
         }
     }
@@ -67,22 +85,24 @@ public class RecyclerViewStoreComparatorAdapter extends RecyclerView.Adapter<Rec
 
     public class StoreHolder extends RecyclerView.ViewHolder {
         public CardView cardview;
+
         public StoreHolder(CardView cardView, final List<Store> storesList) {
             super(cardView);
             this.cardview = cardView;
-            cardview.setOnClickListener(new View.OnClickListener(){
+            cardview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // get position
                     int pos = getAdapterPosition();
 
                     // check if item still exists
-                    if(pos != RecyclerView.NO_POSITION){
+                    if (pos != RecyclerView.NO_POSITION) {
                         fragmentJump(storesList.get(pos));
                     }
                 }
             });
         }
+
         private void fragmentJump(Store store) {
             Fragment mFragment = new StoresFragment();
             Bundle mBundle = new Bundle();
