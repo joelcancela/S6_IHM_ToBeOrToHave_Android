@@ -89,7 +89,7 @@ public class ProductsViewAdapter extends RecyclerView.Adapter<ProductsViewAdapte
 
         Product product = this.productList.get(position);
         title.setText(product.getName());
-        price.setText(String.valueOf(product.getPrice())+"€");
+        price.setText(String.format("%.2f", product.getPrice())+"€");
         ThumbnailsLoader thumbnailsLoader = new ThumbnailsLoader(thumbnail);
         thumbnailsLoader.execute(product.getThumbnailName());
 
