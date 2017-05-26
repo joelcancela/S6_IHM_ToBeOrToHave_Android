@@ -39,7 +39,7 @@ public class SingleProductFragment extends android.support.v4.app.Fragment {
         ThumbnailsLoader thumbnailsLoader = new ThumbnailsLoader(imageView);
         thumbnailsLoader.execute(product.getThumbnailName());
         name.setText(product.getName());
-        price.setText(String.valueOf(product.getPrice()+"€"));
+        price.setText(String.format("%.2f", product.getPrice())+"€");
         description.setText(product.getDescription());
 
 

@@ -39,5 +39,9 @@
     <string name="logout_fr">Deconnexion</string>
     <string name="connexion_title">Connexion</string>
     <string name="add_task_button">Ajouter article</string>
-    <string name="how_to_share">Partagez ce QRCode ou partagez sur votre code promotionnel sur les réseaux sociaux</string>
+    <string name="how_to_share">Partagez ce QRCode ou partagez votre code promotionnel sur les réseaux sociaux et recevez 20pts de fidélité pour chaque ami qui crée un compte ToBeOrToHave grâce à vous !</string>
+    <string name="qrdroid_not_found">QRDroid n\'est pas installé sur votre système voulez-vous l\'installer pour profiter de ces fonctionnalités ?</string>
+    <string name="qrdroid_alert">QRDroid n\'est pas installé</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
 </resources>
