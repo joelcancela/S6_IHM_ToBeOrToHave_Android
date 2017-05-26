@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,7 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
 
@@ -24,19 +30,31 @@ import fr.unice.polytech.jcancela.tobeortohave.R;
 
 public class GiftCardsFragment extends android.support.v4.app.Fragment {
 
+    private ImageView imgResult;
+    private TextView solde;
+    private SharedPreferences preferencesInstance;
+    private int currentPoints;
+    private String username;
+    private int valueEntered;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gift_cards, container, false);
+        preferencesInstance = getActivity().getApplicationContext().getSharedPreferences("ToBeOrToHave", 0);
+        currentPoints = preferencesInstance.getInt("user_points", 0);
+        username = preferencesInstance.getString("username", "Une mysterieuse personne");
+
+        solde = (TextView) view.findViewById(R.id.credits);
+        updateSolde();
+
+        imgResult = (ImageView) view.findViewById(R.id.qrcode);
+        imgResult.setVisibility(View.GONE);
         Button createQRCode = (Button) view.findViewById(R.id.create_qrcode);
         createQRCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences settings = getActivity().getApplicationContext().getSharedPreferences("ToBeOrToHave", 0);
-                final int currentPoints = settings.getInt("user_points", 0);
-                String username = settings.getString("username", "Une mysterieuse personne");
-                showDialogAlertForQRCode(currentPoints,username);
+                showDialogAlertForQRCode(currentPoints, username);
             }
         });
         Button flashQRCode = (Button) view.findViewById(R.id.decode_qrcode);
@@ -53,6 +71,10 @@ public class GiftCardsFragment extends android.support.v4.app.Fragment {
             }
         });
         return view;
+    }
+
+    private void updateSolde() {
+        solde.setText("Solde courant: "+currentPoints+" points");
     }
 
     private void showDialogAlertForQRCode(final int currentPoints, final String username) {
@@ -77,9 +99,10 @@ public class GiftCardsFragment extends android.support.v4.app.Fragment {
                     Toast.makeText(getContext(), "Vous ne pouvez pas donner plus de points que vous en avez.", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
+                    valueEntered=value;
                     Intent qrDroid = new Intent("la.droid.qr.encode");
                     qrDroid.putExtra("la.droid.qr.code", username + "_2BO2H_" + value);
-                    qrDroid.putExtra("la.droid.qr.image" , true);
+                    qrDroid.putExtra("la.droid.qr.image", true);
                     try {
                         startActivityForResult(qrDroid, 1);
                     } catch (Exception e) {
@@ -140,21 +163,24 @@ public class GiftCardsFragment extends android.support.v4.app.Fragment {
                 String points = parse[2];
                 Toast.makeText(getActivity(), username + " vous a envoyé " + points + " pts!",
                         Toast.LENGTH_LONG).show();
-                SharedPreferences settings = getActivity().getApplicationContext().getSharedPreferences("ToBeOrToHave", 0);
-                int currentPoints = settings.getInt("user_points", 0);
-                SharedPreferences.Editor editor = settings.edit();
-                int newPoints = currentPoints + Integer.valueOf(points);
-                editor.putInt("user_points", newPoints);
+                SharedPreferences.Editor editor = preferencesInstance.edit();
+                currentPoints = currentPoints + Integer.valueOf(points);
+                editor.putInt("user_points", currentPoints);
                 editor.apply();
+                updateSolde();
             }
         }
         if (requestCode == 1) {
             String url = data.getExtras().getString("la.droid.qr.result");
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_VIEW);
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            intent.setDataAndType(Uri.parse("file://" + url), "image/*");
-            startActivity(intent);
+            File file = new File(url);
+            Bitmap myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+            imgResult.setImageBitmap(myBitmap);
+            imgResult.setVisibility(View.VISIBLE);
+            SharedPreferences.Editor editor = preferencesInstance.edit();
+            currentPoints = currentPoints - valueEntered;
+            editor.putInt("user_points", currentPoints);
+            editor.apply();
+            updateSolde();
         }
 
     }

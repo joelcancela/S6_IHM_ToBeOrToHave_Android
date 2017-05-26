@@ -1,6 +1,5 @@
 package fr.unice.polytech.jcancela.tobeortohave;
 
-import android.*;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         });
         requestPermissions( new String[]{
                         android.Manifest.permission.ACCESS_FINE_LOCATION,
-                        android.Manifest.permission.ACCESS_COARSE_LOCATION},
+                        android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        android.Manifest.permission.READ_EXTERNAL_STORAGE},
                 1337);
     }
 
