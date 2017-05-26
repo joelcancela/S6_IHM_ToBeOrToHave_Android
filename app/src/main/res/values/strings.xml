@@ -44,4 +44,5 @@
     <string name="qrdroid_alert">QRDroid n\'est pas installé</string>
     <string name="ok">OK</string>
     <string name="cancel">Annuler</string>
+    <string name="qrcode_create_title">Combien de points voulez-vous donner ?</string>
 </resources>

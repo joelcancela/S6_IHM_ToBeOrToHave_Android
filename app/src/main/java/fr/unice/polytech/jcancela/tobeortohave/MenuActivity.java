@@ -53,6 +53,7 @@ public class MenuActivity extends AppCompatActivity
         String username = bundle.getString("username");
         SharedPreferences settings = getApplicationContext().getSharedPreferences("ToBeOrToHave", 0);
         SharedPreferences.Editor editor = settings.edit();
+        editor.putString("username",username);
         editor.putInt("user_points", bundle.getInt("points"));
         editor.apply();
         View headerView = navigationView.getHeaderView(0);
