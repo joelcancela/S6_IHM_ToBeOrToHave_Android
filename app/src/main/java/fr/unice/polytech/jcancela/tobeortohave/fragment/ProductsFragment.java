@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
 import fr.unice.polytech.jcancela.tobeortohave.database.ProductsTask;
-import fr.unice.polytech.jcancela.tobeortohave.database.ProductsViewAdapter;
+import fr.unice.polytech.jcancela.tobeortohave.adapter.ProductsViewAdapter;
 import fr.unice.polytech.jcancela.tobeortohave.model.Product;
 
 /**

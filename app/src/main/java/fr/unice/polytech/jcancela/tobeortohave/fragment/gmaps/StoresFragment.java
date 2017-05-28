@@ -26,6 +26,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
+import fr.unice.polytech.jcancela.tobeortohave.database.StoresTask;
 import fr.unice.polytech.jcancela.tobeortohave.model.Store;
 
 /**

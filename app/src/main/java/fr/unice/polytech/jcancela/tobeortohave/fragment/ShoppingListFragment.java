@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
+import fr.unice.polytech.jcancela.tobeortohave.adapter.RecyclerViewTaskAdapter;
 import fr.unice.polytech.jcancela.tobeortohave.model.Task;
 
 /**

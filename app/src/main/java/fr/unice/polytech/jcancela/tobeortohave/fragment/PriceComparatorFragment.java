@@ -16,7 +16,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
-import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoresTask;
+import fr.unice.polytech.jcancela.tobeortohave.adapter.RecyclerViewStoreComparatorAdapter;
+import fr.unice.polytech.jcancela.tobeortohave.database.StoresTask;
 import fr.unice.polytech.jcancela.tobeortohave.model.Store;
 
 /**

@@ -7,7 +7,6 @@
     tools:context="fr.unice.polytech.jcancela.tobeortohave.MainActivity">
 
     <ImageView
-        android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="false"
@@ -21,7 +20,6 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/logoMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -45,7 +43,6 @@
             android:text="@string/connexion" />
 
         <TextView
-            android:id="@+id/register_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/connection_button"

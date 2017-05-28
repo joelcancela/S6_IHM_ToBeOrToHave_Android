@@ -1,4 +1,4 @@
-package fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps;
+package fr.unice.polytech.jcancela.tobeortohave.database;
 
 import android.os.AsyncTask;
 
@@ -9,7 +9,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.unice.polytech.jcancela.tobeortohave.database.JSONParser;
 import fr.unice.polytech.jcancela.tobeortohave.model.Store;
 
 /**

@@ -1,4 +1,4 @@
-package fr.unice.polytech.jcancela.tobeortohave.fragment;
+package fr.unice.polytech.jcancela.tobeortohave.adapter;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;

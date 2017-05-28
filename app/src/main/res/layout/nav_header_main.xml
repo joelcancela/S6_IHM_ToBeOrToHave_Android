@@ -13,7 +13,6 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="@dimen/logoWidth"
         android:layout_height="@dimen/logoHeight"
         android:contentDescription="@string/tobeortohavelogo"

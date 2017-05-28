@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
+import fr.unice.polytech.jcancela.tobeortohave.adapter.RecyclerViewRewardsAdapter;
 import fr.unice.polytech.jcancela.tobeortohave.database.RewardsTask;
 import fr.unice.polytech.jcancela.tobeortohave.model.Reward;
 
