@@ -39,7 +39,7 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/connexion_title"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".MenuActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

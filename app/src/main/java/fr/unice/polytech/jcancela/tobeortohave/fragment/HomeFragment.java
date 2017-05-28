@@ -21,7 +21,6 @@ import java.util.Date;
 
 import fr.unice.polytech.jcancela.tobeortohave.R;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoreChooserFragment;
-import fr.unice.polytech.jcancela.tobeortohave.fragment.gmaps.StoresFragment;
 import fr.unice.polytech.jcancela.tobeortohave.fragment.twitter.EmbeddedTwitterTimelineFragment;
 
 /**
