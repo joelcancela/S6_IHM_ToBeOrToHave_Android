@@ -29,14 +29,14 @@ Nous devions réaliser une application pour une client de l'enseigne ToBeOrToHav
 
 ### Captures d'écran
 
-![](/doc/tobeortohave_main.png)
-![](/doc/tobeortohave_main_menu.png)
-![](/doc/tobeortohave_menu.png)
-![](/doc/tobeortohave_catalog.png)
-![](/doc/tobeortohave_twitter.png)
-![](/doc/tobeortohave_stores.png)
-![](/doc/tobeortohave_sponsorship.png)
-![](/doc/tobeortohave_qrcode.png)
-![](/doc/tobeortohave_fidelity.png)
-![](/doc/tobeortohave_list.png)
+![](/doc/tobeortohave_main.jpg)
+![](/doc/tobeortohave_main_menu.jpg)
+![](/doc/tobeortohave_menu.jpg)
+![](/doc/tobeortohave_catalog.jpg)
+![](/doc/tobeortohave_twitter.jpg)
+![](/doc/tobeortohave_stores.jpg)
+![](/doc/tobeortohave_sponsorship.jpg)
+![](/doc/tobeortohave_qrcode.jpg)
+![](/doc/tobeortohave_fidelity.jpg)
+![](/doc/tobeortohave_list.jpg)
 
