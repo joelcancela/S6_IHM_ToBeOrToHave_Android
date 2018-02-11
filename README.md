@@ -1,7 +1,7 @@
 # ToBeOrToHave Android
 ![](/doc/tobeortohave_logo.jpg)
 
-Ce projet à été réalisé dans le cadre de la matière "IHM". Cette application a été codée en Android.
+Ce projet a été réalisé dans le cadre de la matière "IHM". Cette application a été codée en Android.
 
 ### Sujet
 Nous devions réaliser une application pour une client de l'enseigne ToBeOrToHave :
