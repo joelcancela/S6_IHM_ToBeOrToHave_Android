@@ -10,6 +10,14 @@ buildscript {
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\username\\.android\\debug.keystore')
+            storePassword 'android'
+            keyAlias = 'debug.keystore'
+            keyPassword 'android'
+        }
+    }
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -20,6 +28,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
     }
     buildTypes {
         release {
