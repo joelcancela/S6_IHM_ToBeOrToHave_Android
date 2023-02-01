@@ -1,0 +1,10 @@
+{
+    "users": [
+        {
+            "email": "coolemail@google.fr",
+            "password": "pass",
+            "username": "user",
+            "points": "777"
+        }
+    ]
+}

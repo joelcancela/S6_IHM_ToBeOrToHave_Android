@@ -1,0 +1,242 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "ASOS Terminator",
+      "keywords": [
+        0
+      ],
+      "starred": true,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 999.99,
+      "picture": "sample.bmp",
+      "description": "PC MasterRace 2017"
+    },
+    {
+      "id": 1,
+      "name": "Thierry Pattor & la cave des mystères",
+      "keywords": [
+        5
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 95,
+      "price": 8.5,
+      "picture": "sample.bmp",
+      "description": "Le dernier tome de la saga du jeune chevrier"
+    },
+    {
+      "id": 2,
+      "name": "JOL - L'ouvany",
+      "keywords": [
+        4
+      ],
+      "starred": false,
+      "discounted": true,
+      "discountRate": 90,
+      "salesNumber": 60,
+      "price": 10,
+      "picture": "sample.bmp",
+      "description": "Le nouvel album de JOL, déjà disque de platine !!"
+    },
+    {
+      "id": 3,
+      "name": "Pear - Upad",
+      "keywords": [
+        1
+      ],
+      "starred": true,
+      "discounted": false,
+      "discountRate": 600,
+      "salesNumber": 67,
+      "price": 670,
+      "picture": "sample.bmp",
+      "description": "Le nouveau modèle pour tous les Roucools"
+    },
+    {
+      "id": 4,
+      "name": "Ocar - G520",
+      "keywords": [
+        0
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 105,
+      "picture": "sample.bmp",
+      "description": "L'ordinateur portable, par excellence."
+    },
+    {
+      "id": 5,
+      "name": "MSU - Spoctre",
+      "keywords": [
+        0
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 177,
+      "price": 822,
+      "picture": "sample.bmp",
+      "description": "PC MasterRace 2016"
+    },
+    {
+      "id": 6,
+      "name": "Sumzumg - tob 4",
+      "keywords": [
+        1
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 20,
+      "salesNumber": 777,
+      "price": 560,
+      "picture": "sample.bmp",
+      "description": "La meilleure tablette sur le marché"
+    },
+    {
+      "id": 7,
+      "name": "LJ - Plasma 5",
+      "keywords": [
+        2
+      ],
+      "starred": true,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 25,
+      "price": 2500,
+      "picture": "sample.bmp",
+      "description": "La TV 4K 3D HD à votre portée"
+    },
+    {
+      "id": 8,
+      "name": "Vionney - Je reviens",
+      "keywords": [
+        4
+      ],
+      "starred": true,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 15,
+      "picture": "sample.bmp",
+      "description": "L'album de l'artiste francophone de l'année"
+    },
+    {
+      "id": 9,
+      "name": "Rog'n'tree - Droïde",
+      "keywords": [
+        4
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 123,
+      "price": 9.9,
+      "picture": "sample.bmp",
+      "description": ""
+    },
+    {
+      "id": 10,
+      "name": "Woki - PhoneDaube",
+      "keywords": [
+        9
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 2.5,
+      "picture": "sample.bmp",
+      "description": "Le téléphone le plus performant au monde"
+    },
+    {
+      "id": 11,
+      "name": "Nokota - Optimization for oyster farmer",
+      "keywords": [
+        8
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 21.35,
+      "picture": "sample.bmp",
+      "description": "Best-seller de Nokota Cykablitch"
+    },
+    {
+      "id": 12,
+      "name": "Girman - Lost404",
+      "keywords": [
+        3
+      ],
+      "starred": false,
+      "discounted": true,
+      "discountRate": 10,
+      "salesNumber": 777,
+      "price": 150,
+      "picture": "sample.bmp",
+      "description": "Ne soyez plus dupers !"
+    },
+    {
+      "id": 13,
+      "name": "Jojo - Fifty shades of Jojo",
+      "keywords": [
+        5
+      ],
+      "starred": true,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 565,
+      "picture": "sample.bmp",
+      "description": "Romance de l'année 2017, découvrez les plaisirs interdits"
+    },
+    {
+      "id": 14,
+      "name": "Logotach - Tab 200",
+      "keywords": [
+        1
+      ],
+      "starred": true,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 321.5,
+      "picture": "sample.bmp",
+      "description": "Le tablette discount par excellence"
+    },
+    {
+      "id": 15,
+      "name": "Chaussures de sport Kalenjo",
+      "keywords": [
+        1
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 59.9,
+      "picture": "sample.bmp",
+      "description": "Kruschtkraft"
+    },
+    {
+      "id": 16,
+      "name": "Meuble en kit STÅLSUND",
+      "keywords": [
+        1
+      ],
+      "starred": false,
+      "discounted": false,
+      "discountRate": 0,
+      "salesNumber": 777,
+      "price": 59.9,
+      "picture": "sample.bmp",
+      "description": "Cyka blyat"
+    }
+  ]
+}

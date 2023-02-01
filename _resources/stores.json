@@ -1,0 +1,46 @@
+{
+  "stores": [
+    {
+      "id": 0,
+      "name": "Asos Nice",
+      "brand": 5,
+      "description": "Nouvel arrivage de PC dernière génération ! Ne ratez pas ça !",
+      "address": "NICE",
+      "phone": "01 21 45 78 98",
+      "webAddress": "asos.com/shops/fr/nice",
+      "CA": [
+        1.3,
+        5.1,
+        7.2
+      ],
+      "position": {
+        "latitude": 43.7,
+        "longitude": 7.25
+      },
+      "stock": [
+        0
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Polykéa Nice",
+      "brand": 7,
+      "description": "Magasin Polykéa de Nice, votez pour nous !",
+      "address": "NICE",
+      "phone": "01 54 86 95 85",
+      "webAddress": "polykea.fr/nice",
+      "CA": [
+        1.3,
+        5.1,
+        7.2
+      ],
+      "position": {
+        "latitude": 43.610769,
+        "longitude": 3.8767159999999876
+      },
+      "stock": [
+        16
+      ]
+    }
+  ]
+}

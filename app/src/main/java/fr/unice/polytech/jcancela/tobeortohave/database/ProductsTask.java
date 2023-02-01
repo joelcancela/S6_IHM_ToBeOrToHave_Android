@@ -20,7 +20,7 @@ public class ProductsTask extends AsyncTask<Void, Void, List<Product>> {
     protected List<Product> doInBackground(Void... params) {
         List<Product> products = new ArrayList<>();
         JSONParser jsonParser = new JSONParser();
-        JSONObject jsonObject = jsonParser.getJSONFromUrl("http://www.joelcancela.fr/share/ToBeOrToHave/products.json");
+        JSONObject jsonObject = jsonParser.getJSONFromUrl("http://example.com/ToBeOrToHave/products.json");
         try {
             JSONArray jsonArray = jsonObject.getJSONArray("products");
             for (int i = 0; i < jsonArray.length() ; i++) {

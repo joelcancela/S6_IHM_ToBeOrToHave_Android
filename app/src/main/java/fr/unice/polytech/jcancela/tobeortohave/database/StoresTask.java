@@ -22,7 +22,7 @@ public class StoresTask extends AsyncTask<Void, Void, List<Store>> {
     protected List<Store> doInBackground(Void... params) {
         List<Store> stores = new ArrayList<>();
         JSONParser jsonParser = new JSONParser();
-        JSONObject jsonStores = jsonParser.getJSONFromUrl("http://www.joelcancela.fr/share/ToBeOrToHave/stores.json");
+        JSONObject jsonStores = jsonParser.getJSONFromUrl("http://example.com/ToBeOrToHave/stores.json");
         try {
             JSONArray storesjson = jsonStores.getJSONArray("stores");
             for (int i = 0; i < storesjson.length(); i++) {

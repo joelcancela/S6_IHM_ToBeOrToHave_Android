@@ -25,7 +25,7 @@ public class ThumbnailsLoader extends AsyncTask<String, Void, Bitmap> {
     protected Bitmap doInBackground(String... params) {
         Bitmap bmp = null;
         try {
-            String url = "http://www.joelcancela.fr/share/ToBeOrToHave/products/"+params[0];
+            String url = "http://example.com/ToBeOrToHave/products/"+params[0];
             InputStream inptStr = (InputStream) new URL(url).getContent();
             bmp = BitmapFactory.decodeStream(inptStr);
         } catch (IOException e) {

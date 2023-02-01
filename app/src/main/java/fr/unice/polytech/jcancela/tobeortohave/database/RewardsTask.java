@@ -20,7 +20,7 @@ public class RewardsTask  extends AsyncTask<Void, Void, List<Reward>> {
     protected List<Reward> doInBackground(Void... params) {
         List<Reward> rewards = new ArrayList<>();
         JSONParser jsonParser = new JSONParser();
-        JSONObject jsonObject = jsonParser.getJSONFromUrl("http://www.joelcancela.fr/share/ToBeOrToHave/rewards.json");
+        JSONObject jsonObject = jsonParser.getJSONFromUrl("http://example.com/ToBeOrToHave/rewards.json");
         try {
             JSONArray jsonArray = jsonObject.getJSONArray("rewards");
             for (int i = 0; i < jsonArray.length() ; i++) {

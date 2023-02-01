@@ -23,7 +23,7 @@ public class LoggingVerifier {
 
     public boolean tryLogging() {
         JSONParser jsonParser = new JSONParser();
-        JSONObject usersJson = jsonParser.getJSONFromUrl("http://www.joelcancela.fr/share/ToBeOrToHave/users.json");
+        JSONObject usersJson = jsonParser.getJSONFromUrl("http://example.com/ToBeOrToHave/users.json");
         if(usersJson == null){
             return false;
         }

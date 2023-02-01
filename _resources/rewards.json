@@ -1,0 +1,9 @@
+{
+    "rewards": [
+        {
+            "name": "Silver member",
+            "description": "You are now a VIP Silver member",
+            "pointsToReach": 123
+        }
+    ]
+}
